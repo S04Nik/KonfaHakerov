@@ -1,13 +1,35 @@
 //
-sign_up.addEventListener("click", function(){
-    setCookie("Email", email.value, 1);
-    setCookie("Password", psw.value, 1)
-    console.log(email);
-     window.location="second_page.html";
+//Валидация 
+    //Проверка полей Password и RepetPassword 
+    //Если не совпадают - выводим ошибку
+    //Если валидация не пройдена Return false
 
-  });
+    if(typeof sign_up !== "undefined") {
+        if(getCookie("Email") && getCookie("Password")){
+            window.location="second_page.html";
+        }
+        
+        
+        sign_up.addEventListener("click", function(event){
+            
+            console.log(email_id);
+            
+            event.preventDefault();
+            
+            //if(getCookie()){}
+        
+            setCookie("Email", email_id.value, 1);
+            setCookie("Password", psw.value, 1)
+            window.location="second_page.html";
+        
+          });
+    }
 
-
+    if(typeof second_button !== "undefined") {
+        if(!getCookie("Email") && !getCookie("Password")){
+            window.location="first_page.html";
+        }
+    }
 
 
 
