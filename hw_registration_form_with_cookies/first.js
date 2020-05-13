@@ -15,8 +15,6 @@ sign_up.addEventListener("click", function(){
 
 
 
-
-
 function setCookie(name, value, hours) {
     var expires = "";
     if (hours) {
