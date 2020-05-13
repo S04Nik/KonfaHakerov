@@ -1,4 +1,11 @@
 //
+sign_up.addEventListener("click", function(){
+    setCookie("Email", email.value, 1);
+    setCookie("Password", psw.value, 1)
+    console.log(email);
+     window.location="second_page.html";
+
+  });
 
 
 
@@ -10,7 +17,7 @@
 
 
 
-function setCookie(name,value,hours) {
+function setCookie(name, value, hours) {
     var expires = "";
     if (hours) {
         var date = new Date();
