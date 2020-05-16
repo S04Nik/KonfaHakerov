@@ -21,7 +21,6 @@
             setCookie("Email", email_id.value, 1);
             setCookie("Password", psw.value, 1)
             window.location="second_page.html";
-        
           });
     }
 
@@ -31,9 +30,9 @@
         }
     }
 
+console.log(getCookie("Email"));
 
-
-
+    
 
 
 

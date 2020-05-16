@@ -69,11 +69,20 @@ input[type=submit]:hover {
     margin-top: 0;
   }
 }
+.header{
+  display: flex;
+}
+.exit{
+  float:right;
+}
 </style>
 </head>
 <body>
 
+<div class="header">
 <h2>Responsive Form</h2>
+<a href="" class="exit">exit</a>
+</div>
 
 <div class="container">
   <form action="/action_page.php">
@@ -100,7 +109,7 @@ input[type=submit]:hover {
       <div class="col-75">
         <select id="country" name="country">
           <option value="ukraine">Ukraine</option>
-          <option value="russia">russia</option>
+          <option value="russia">Europe</option>
           <option value="usa">USA</option>
         </select>
       </div>
