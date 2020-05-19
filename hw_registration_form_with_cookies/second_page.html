@@ -63,17 +63,30 @@ input[type=submit]:hover {
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
+/* @media screen and (max-width: 600px) {
+  
+} */
+.col_l{
+  width: 50%;
+
+}
+.col_r{
+  width: 50%;
+
+}
+input[type=submit] {
     width: 100%;
     margin-top: 0;
   }
-}
 .header{
   display: flex;
 }
-.exit{
-  float:right;
+#exit{
+  position: absolute;
+  right: 20px;
+}
+.button_row{
+  bottom: 20px;
 }
 </style>
 </head>
@@ -81,50 +94,53 @@ input[type=submit]:hover {
 
 <div class="header">
 <h2>Responsive Form</h2>
-<a href="" class="exit">exit</a>
+<div id="exit">
+  <label id="Hello">Hello </label>
+  <a href="" id="exit_ref">exit</a>
+</div>
 </div>
 
 <div class="container">
   <form action="/action_page.php">
     <div class="row">
-      <div class="col-25">
+      <div class="col_l">
         <label for="fname">First Name</label>
       </div>
-      <div class="col-75">
+      <div class="col_l">
         <input type="text" id="fname" name="firstname" placeholder="Your name..">
       </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
+      <div class="col_r">
         <label for="lname">Last Name</label>
       </div>
-      <div class="col-75">
+      <div class="col_r">
         <input type="text" id="lname" name="lastname" placeholder="Your last name..">
       </div>
     </div>
     <div class="row">
-      <div class="col-25">
+      <div class="col_l">
+        <label for="lname">Year of birth</label>
+      </div>
+      <div class="col_l">
+        <input type="text" id="Year_birth" name="Year_of_birth" placeholder="Year of birth..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col_l">
         <label for="country">Country</label>
       </div>
-      <div class="col-75">
+      <div class="col_l">
         <select id="country" name="country">
           <option value="ukraine">Ukraine</option>
           <option value="russia">Europe</option>
           <option value="usa">USA</option>
         </select>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="subject">Subject</label>
-      </div>
-      <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      <div class="button_row">
+        <input id = "second_button" type="submit" value="Save">
       </div>
     </div>
-    <div class="row">
-      <input id = "second_button" type="submit" value="Submit">
-    </div>
+    
+   
   </form>
 </div>
 

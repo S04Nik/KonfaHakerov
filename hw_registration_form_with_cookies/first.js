@@ -1,10 +1,11 @@
-//
-//Валидация 
+
+    //Валидация 
     //Проверка полей Password и RepetPassword 
     //Если не совпадают - выводим ошибку
     //Если валидация не пройдена Return false
-
     if(typeof sign_up !== "undefined") {
+        
+
         if(getCookie("Email") && getCookie("Password")){
             window.location="second_page.html";
         }
@@ -12,6 +13,10 @@
         
         sign_up.addEventListener("click", function(event){
             
+            if(psw.value !== psw_repeat.value){
+                
+            }
+
             console.log(email_id);
             
             event.preventDefault();
@@ -25,6 +30,8 @@
     }
 
     if(typeof second_button !== "undefined") {
+        document.getElementById("Hello").innerHTML = "Hello " + getCookie("Email");
+
         if(!getCookie("Email") && !getCookie("Password")){
             window.location="first_page.html";
         }
@@ -32,9 +39,18 @@
 
 console.log(getCookie("Email"));
 
+if(typeof exit_ref !== "undefined") {
+    //При нажатии на кнопку Exit - кукисы удаляются и происходит редирект на первую страницу
+    document.getElementById("exit_ref").addEventListener("click", function(event){
+        document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+        event.preventDefault();
     
+        window.location="first_page.html";
+        console.log("111122");
 
-
+      });
+    }
+    
 
 function setCookie(name, value, hours) {
     var expires = "";
@@ -55,6 +71,6 @@ function getCookie(name) {
     }
     return null;
 }
-function eraseCookie(name) {   
-    document.cookie = name+'=; Max-Age=-99999999;';  
-}
+// function eraseCookie(name) {   
+//     document.cookie = name+'=; Max-Age=-99999999;';  
+// }
